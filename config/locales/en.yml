@@ -1,14 +1,14 @@
 en:
   home: "Home"
-  help: "Help"
-  about: "About"
-  login: "Log in"  
+  sign_up: "Sign up"
+  sign_in: "Sign in"
+  sign_out: "Sign out"
+  _errors: "errors"
+  the_form_contains: "the form contains"
   my_app:
     name: "FTS"
   products:
     title: "Products"
     released: "Released"
-  flash:
-    login: "Logged in successfully."
   footer:
     me: "Framgia Internship"
