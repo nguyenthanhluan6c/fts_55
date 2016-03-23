@@ -1,0 +1,7 @@
+<% provide title: t("categories") %>
+<h1><%= t "categories" %></h1>
+<%= link_to t("category.create_new"), new_category_path, {class: "btn btn-primary"} %>
+<ul class="categories">
+  <%= render @categories %>
+  <%= paginate @categories %>
+</ul>
