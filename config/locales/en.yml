@@ -4,7 +4,12 @@ en:
   sign_in: "Sign in"
   sign_out: "Sign out"
   _errors: "errors"
+  setting: "Setting"
   the_form_contains: "the form contains"
+  back: "Back"
+  update: "Update"
+  delete_account: "Delete Account"
+  confirm_question: "Are you sure?"
   my_app:
     name: "FTS"
   products:
