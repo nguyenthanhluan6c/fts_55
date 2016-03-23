@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name
       t.string :chatwork_id
-      t.integer :role
+      t.integer :role, default: 0
 
       t.timestamps null: false
     end

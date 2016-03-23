@@ -8,8 +8,26 @@ en:
   the_form_contains: "the form contains"
   back: "Back"
   update: "Update"
+  edit: "Edit"
+  delete: "Delete"
+  create: "Create"
   delete_account: "Delete Account"
   confirm_question: "Are you sure?"
+  views:
+    pagination:
+      previous: "&lt; Previous"
+      next: "Next &gt;"
+      truncate: "..."
+  categories: "Categories"
+  category:
+    number_of_words_in_examination: "Examination of this category will contain %{number} words"
+    deleted: "Deleted category"
+    can_not_delete: "Can not delete category"
+    updated: "Category updated"
+    success_created: "Category successfully created"
+    create_new: "Create new category"
+    new_category: "New category"
+    update: "Update category"
   my_app:
     name: "FTS"
   products:

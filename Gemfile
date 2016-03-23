@@ -11,12 +11,16 @@ gem "jbuilder", "~> 2.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "bootstrap-sass", "3.2.0.0"
 gem "devise"
+gem "kaminari"
+gem "cancancan", "~> 1.10"
 
 group :development, :test do
+  gem "factory_girl_rails"
   gem "byebug"
 end
 
 group :development do
   gem "web-console", "~> 2.0"
   gem "spring"
+  gem "faker", "1.4.2"
 end
