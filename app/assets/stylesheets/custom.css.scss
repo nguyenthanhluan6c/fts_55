@@ -229,3 +229,33 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+.description {
+  background-color: #FFF;
+  padding-top:12px;
+  padding-right:24px;
+  padding-left:24px;
+  position: relative;
+  overflow: hidden;
+  margin: 0.5rem 0 1rem 0;
+  transition: box-shadow .25s;
+  border-radius: 2px;
+}
+
+
+.card {
+  background-color: #E4E4E4;
+  padding-top:12px;
+  padding-right:24px;
+  padding-left:24px;
+  padding-bottom:12px;
+  position: relative;
+  overflow: hidden;
+  margin: 0.5rem 0 1rem 0;
+  transition: box-shadow .25s;
+  border-radius: 2px;
+}
+
+.card.flat {
+    box-shadow: 0 0 0 0,0 0 0 0;
+}
