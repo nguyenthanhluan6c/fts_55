@@ -1,0 +1,15 @@
+<div class="col-md-8">    
+  <div class="card flat">
+    <h3><%= @category.name %></h3>  
+    <div class="card flat">    
+    <span><i><%= t "category.number_of_words_in_examination",
+      number: @category.number_of_words_in_examination %></i></span>
+    <p class="description"><%= @category.description %></p>    
+    </div>
+    <ol class = "questions">      
+    </ol>  
+    <%= link_to t("edit"), edit_category_path(@category), class: "btn btn-primary" %>
+    <%= link_to t("delete"), @category, method: :delete,
+      data: {confirm: t("confirm_question")}, class: "btn btn-primary" %>
+  </div>
+</div>
