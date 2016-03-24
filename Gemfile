@@ -13,6 +13,7 @@ gem "bootstrap-sass", "3.2.0.0"
 gem "devise"
 gem "kaminari"
 gem "cancancan", "~> 1.10"
+gem "config"
 
 group :development, :test do
   gem "factory_girl_rails"

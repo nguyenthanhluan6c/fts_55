@@ -1,0 +1,4 @@
+user_grantable_roles:
+  admin: "admin"
+  normal: "normal"
+  mod: "mod"

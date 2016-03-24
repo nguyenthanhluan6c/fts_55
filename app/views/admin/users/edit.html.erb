@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3><%= @user.name %></h3>
+      </div>
+      <div class="panel-body">
+        <%= form_for [:admin, @user] do |f| %>
+          <%= render "shared/error_messages", object: @user %>
+          <div class = "fields" >
+            <%= f.label :role %>
+            <% Settings.user_grantable_roles.each do |key, value| %>
+              <label>
+                <%= f.radio_button :role, key, checked: @user.role.eql?(value) %>
+                <%= f.label t("user.role.#{key}") %>
+              </label>
+            <% end %>
+          </div>
+          <div class="actions">
+            <%= f.submit t("user.update"), class: "btn btn-lg btn-primary" %>
+          </div>
+        <% end %>  
+      </div> 
+    </div>
+  </div>
+</div>
