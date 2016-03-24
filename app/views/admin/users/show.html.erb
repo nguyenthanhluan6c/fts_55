@@ -1,0 +1,21 @@
+<% provide title: @user.name %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section class="stats">
+      <%= @user.role %> 
+    </section>
+  </aside>
+  <aside class="col-md-8">
+    <%= link_to t("edit"), edit_admin_user_path(@user), class: "btn btn-primary" %>
+    <%= link_to t("delete"), [:admin, @user], method: :delete,
+      data: {confirm: t("confirm_question")}, class: "btn btn-primary" %>
+    </div>
+    <ul class="activities">
+    </ul>
+  </aside>
+</div>
