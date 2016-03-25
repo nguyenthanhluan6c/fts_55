@@ -21,7 +21,7 @@ en:
   users: "Users"
   categories: "Categories"
   category:
-    number_of_words_in_examination: "Examination of this category will contain %{number} words"
+    number_of_questions_in_examination: "Examination of this category will contain %{number} questions"
     deleted: "Deleted category"
     can_not_delete: "Can not delete category"
     updated: "Category updated"

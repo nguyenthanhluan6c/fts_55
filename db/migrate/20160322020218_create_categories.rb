@@ -4,7 +4,7 @@ class CreateCategories < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.time :time_limit
-      t.integer :number_of_words_in_examination
+      t.integer :number_of_questions_in_examination
 
       t.timestamps null: false
     end

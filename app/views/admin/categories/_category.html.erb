@@ -2,8 +2,8 @@
   <div class="card flat">
     <h3><span class="category">
       <%= link_to category.name, [:admin, category] %></span></h3>
-    <span><i><%= t "category.number_of_words_in_examination",
-      number: category.number_of_words_in_examination %></i></span>
+    <span><i><%= t "category.number_of_questions_in_examination",
+      number: category.number_of_questions_in_examination %></i></span>
     <p class="description"><%= category.description %></p>
     <%= link_to t("edit"), edit_admin_category_path(category), class: "btn btn-primary" %>
     <%= link_to t("delete"), [:admin, category], method: :delete,
