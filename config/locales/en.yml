@@ -13,6 +13,10 @@ en:
   create: "Create"
   delete_account: "Delete Account"
   confirm_question: "Are you sure?"
+  remove: "Remove"
+  add_option: "Add more option"
+  at_least_1_right: "At least one right"
+  only_1_right: "Only one right"
   views:
     pagination:
       previous: "&lt; Previous"
@@ -29,6 +33,19 @@ en:
     create_new: "Create new category"
     new_category: "New category"
     update: "Update category"
+  questions: "Questions"
+  question:
+    option_type:
+      single_choice: "Single choice"
+      multi_choice: "Multi choice"
+      text: "Text"
+    deleted: "Deleted question"
+    can_not_delete: "Can not delete question"
+    updated: "Question updated"
+    success_created: "Question successfully created"
+    create_new: "Create new question"
+    new_question: "New question"
+    update: "Update question"
   user:
     index:
       title: "Users"

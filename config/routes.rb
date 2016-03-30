@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "categories#index"
     resources :categories
+    resources :questions
     resources :users 
   end
 end

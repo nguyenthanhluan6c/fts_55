@@ -2,3 +2,10 @@ user_grantable_roles:
   admin: "admin"
   normal: "normal"
   mod: "mod"
+question_option_types:
+  single_choice: "single_choice"
+  multi_choice: "multi_choice"
+  text: "text"
+question_option_type:
+  default: "single_choice"
+question_status_admin_type: "approved"
