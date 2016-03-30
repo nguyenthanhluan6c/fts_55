@@ -33,6 +33,7 @@ en:
     create_new: "Create new category"
     new_category: "New category"
     update: "Update category"
+  contribute_question: "Contribute question"  
   questions: "Questions"
   question:
     option_type:

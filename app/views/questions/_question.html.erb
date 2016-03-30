@@ -1,0 +1,10 @@
+<li id="question-<%= question.id %>">
+  <div class="card flat">
+    <h3><span class="question">
+      <%= question.content %></span></h3>
+
+    <%= link_to t("edit"), edit_question_path(question), class: "btn btn-primary" %>
+    <%= link_to t("delete"), question, method: :delete,
+      data: {confirm: t("confirm_question")}, class: "btn btn-primary" %>
+    </div>
+</li>
