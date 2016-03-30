@@ -1,0 +1,7 @@
+<% provide title: t("questions") %>
+<h1><%= t "questions" %></h1>
+<%= link_to t("question.create_new"), new_admin_question_path, {class: "btn btn-primary"} %>
+<ul class="questions">
+  <%= render @questions %>
+  <%= paginate @questions %>
+</ul>
