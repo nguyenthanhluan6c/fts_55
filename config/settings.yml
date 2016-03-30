@@ -8,4 +8,11 @@ question_option_types:
   text: "text"
 question_option_type:
   default: "single_choice"
-question_status_admin_type: "approved"
+question_statuses:
+  approved: "approved"
+  rejected: "rejected"
+  waiting: "waiting"
+question_status_default:
+  admin: "approved"
+  user: "waiting"
+  mod: "approved"

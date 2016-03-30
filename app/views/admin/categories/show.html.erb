@@ -6,10 +6,11 @@
       number: @category.number_of_questions_in_examination %></i></span>
     <p class="description"><%= @category.description %></p>    
     </div>
-    <ol class = "questions">      
-    </ol>  
-    <%= link_to t("edit"), edit_category_path(@category), class: "btn btn-primary" %>
-    <%= link_to t("delete"), @category, method: :delete,
+    <ol class="questions">
+      <%= render @category.questions %>
+    </ol>    
+    <%= link_to t("edit"), edit_admin_category_path(@category), class: "btn btn-primary" %>
+    <%= link_to t("delete"), [:admin, @category], method: :delete,
       data: {confirm: t("confirm_question")}, class: "btn btn-primary" %>
   </div>
 </div>
