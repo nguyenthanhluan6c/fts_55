@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20160322033009) do
 
   create_table "questions", force: :cascade do |t|
     t.string   "content"
-    t.integer  "type"
+    t.integer  "option_type"
     t.integer  "status"
     t.integer  "user_id"
     t.integer  "category_id"
