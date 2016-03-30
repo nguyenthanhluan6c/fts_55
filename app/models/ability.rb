@@ -6,11 +6,10 @@ class Ability
     if user.admin?
       can :manage, :all
     else
-      can :read, :all
-      cannot :manage, @Category
-      if user.mod?     
-        can :update, @Question
-      end
+      can :update, User, id: user.id
+      can [:create, :read, :update], Examination
+      can :index, Category
+      can [:create, :index, :edit, :update], Question, user_id: user.id
     end
   end
 end

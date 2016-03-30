@@ -5,15 +5,14 @@
         <h3><%= t "question.new_question" %></h3>
       </div>
       <div class="panel-body">
-        <%= form_for [:admin, @question] do |f| %>
+        <%= form_for @question do |f| %>
           <%= render "shared/error_messages", object: @question %>
           <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.hidden_field :status, value: @status %>
           <%= f.label :category %>
           <%= f.collection_select :category_id, @categories, :id, :name %>
           <%= f.label :content %>
           <%= f.text_area :content, class: "form-control" %>
-          <%= f.label :status %>
-          <%= f.select :status, Settings.question_statuses,selected: @status %>
 
           <%= f.label :option_type %>
           <%= custom_select f, :option_type, :question_options,

@@ -8,7 +8,6 @@
         <%= form_for [:admin, @question] do |f| %>
           <%= render "shared/error_messages", object: @question %>
           <%= f.hidden_field :user_id, value: current_user.id %>
-          <%= f.hidden_field :status, value: Settings.question_status_admin_type %>
           <%= f.label :category %>
           <%= f.collection_select :category_id, @categories, :id, :name %>
           <%= f.label :content %>
@@ -17,14 +16,16 @@
           <%= f.select :status, Settings.question_statuses,selected: @status %>
 
           <%= f.label :option_type %>
-          <%= custom_select f, :option_type, :question_options, Settings.question_option_types, @option_type %>
+          <%= custom_select f, :option_type, :question_options,
+            Settings.question_option_types, @option_type %>
           <p id = "question_options">
             <%= f.label :question_options%>
             <div class = "question_option_field">
             <%= f.fields_for :question_options do |field| %>
               <%= render "question_option_" + @option_type + "_fields", f: field %>          
             <% end %>
-            <%= link_to_add_fields t("add_option"), f, :question_options, @option_type unless @option_type.eql? "text" %>
+            <%= link_to_add_fields t("add_option"), f, :question_options,
+              @option_type unless @option_type.eql? "text" %>
             </div>
           </p>
           <div class="actions">
