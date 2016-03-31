@@ -1,0 +1,33 @@
+<div class="row">
+  <ul>
+    <% @results.each do |result| %>
+      <li>
+        <% question = result.question %>
+        <%= question.content %><br/>
+        <% case question.option_type %>
+        <% when Settings.question_option_types.single_choice %>
+          <% question.question_options.each do |option| %>
+            <span class = "input-inline">
+              <%= radio_button_tag "question#{question.id}", option.id,
+              result.content.include?(option.id.to_s),
+              {disabled: true} %>
+              <%= option.content %><br/>
+            </span>
+          <% end %>
+        <% when Settings.question_option_types.multi_choice %>
+          <% question.question_options.each do |option| %>
+            <span class = "input-inline">
+              <%= check_box_tag "question#{question.id}", option.id,
+              result.content.include?(option.id.to_s),
+              {disabled: true} %>
+              <%= option.content %><br/>
+            </span>
+          <% end %>
+        <% when Settings.question_option_types.text %>
+          <%= text_field_tag "question#{question.id}", result.content[0],
+            disabled: true %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

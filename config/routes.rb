@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :questions, except: [:index, :show]
 
+  resources :examinations, only: [:create, :show, :update]
+
   namespace :admin do
     root "categories#index"
     resources :categories

@@ -1,0 +1,11 @@
+<div class="row">
+  <%= form_for @examination do |f| %>
+    <ol class="results">
+      <%= f.fields_for :results do |r| %>
+        <%= render r.object, r: r %>
+      <% end %>
+    </ol>
+    <%= f.submit t("save"), class: "btn btn-warning" %>
+    <%= f.submit t("finish"), class: "btn btn-success" %>
+  <% end %>
+</div>

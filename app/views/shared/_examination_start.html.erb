@@ -1,0 +1,9 @@
+<%= form_for @examination do |f| %>
+  <%= render "shared/error_messages", object: @examination %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.label :category %>
+  <%= f.collection_select :category_id, @categories, :id, :name %>
+  <div class="actions">
+    <%= f.submit t("start"), class: "btn btn-primary" %>
+  </div>  
+<% end %>

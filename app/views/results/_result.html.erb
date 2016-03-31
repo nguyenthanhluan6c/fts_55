@@ -1,0 +1,26 @@
+<li>
+  <% question = result.question %>
+  <%= question.content %><br/>
+  <% case question.option_type %>
+  <% when Settings.question_option_types.single_choice %>
+    <% question.question_options.each do |option| %>
+      <span class = "input-inline">
+        <%= r.radio_button :content, option.id,
+          {checked: result.content.include?(option.id.to_s),
+          multiple: true} %>
+       <%= option.content %><br/>
+      </span>
+    <% end %>
+  <% when Settings.question_option_types.multi_choice %>
+    <% question.question_options.each do |option| %>
+      <span class = "input-inline">
+        <%= r.check_box :content,
+          {checked: result.content.include?(option.id.to_s),
+          multiple: true}, option.id, false %>
+        <%= option.content %><br/>
+      </span>
+    <% end %>
+  <% when Settings.question_option_types.text %>
+    <%= r.text_field :content, multiple: true %>
+  <% end %>
+</li>
