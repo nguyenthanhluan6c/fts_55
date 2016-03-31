@@ -12,7 +12,7 @@ class Examination < ActiveRecord::Base
   after_create :init_exam
 
   def time_remaining
-    category.time_limit  - self.spent_time
+    category.time_limit  - time_spent
   end
 
   def time_spent

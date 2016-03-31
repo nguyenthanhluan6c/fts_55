@@ -17,6 +17,10 @@ en:
   add_option: "Add more option"
   at_least_1_right: "At least one right"
   only_1_right: "Only one right"
+  start: "Start"
+  save: "Save"
+  time_over: "Time over"
+  finish: "Finish"
   views:
     pagination:
       previous: "&lt; Previous"
@@ -47,6 +51,10 @@ en:
     create_new: "Create new question"
     new_question: "New question"
     update: "Update question"
+  examinations: 
+  examination:
+    can_not_take_examination: "Can not take examination"
+    can_not_update: "Cannot update examination"
   user:
     index:
       title: "Users"
