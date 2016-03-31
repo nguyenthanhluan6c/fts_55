@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :questions, except: [:index, :show]
+  resources :examinations, only: [:create, :show, :update]
 
   namespace :admin do
     root "categories#index"

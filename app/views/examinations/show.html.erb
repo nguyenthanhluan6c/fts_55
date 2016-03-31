@@ -1,0 +1,7 @@
+<% provide title: @examination.category %>
+<div class="row">
+  <div class="col-md-8">    
+    <h3><%= @examination.category.name %></h3>
+    <%= render "#{@examination.status}" %>
+  </div>
+</div>
