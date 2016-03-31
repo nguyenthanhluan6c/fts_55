@@ -3,6 +3,7 @@ FactoryGirl.define do
     name {Faker::Name.name}
     description {Faker::Lorem.paragraphs rand(5..15)}
     number_of_questions_in_examination {rand 10..30}
+    time_limit {rand 30..60}
 
     trait :with_questions do
       ignore do
