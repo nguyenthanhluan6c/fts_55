@@ -35,10 +35,11 @@ ActiveRecord::Schema.define(version: 20160322033009) do
   create_table "examinations", force: :cascade do |t|
     t.integer  "number_of_right_answer"
     t.integer  "status"
+    t.integer  "spent_time",             default: 0
     t.integer  "user_id"
     t.integer  "category_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   add_index "examinations", ["category_id"], name: "index_examinations_on_category_id"
@@ -67,19 +68,10 @@ ActiveRecord::Schema.define(version: 20160322033009) do
   add_index "questions", ["category_id"], name: "index_questions_on_category_id"
   add_index "questions", ["user_id"], name: "index_questions_on_user_id"
 
-  create_table "result_options", force: :cascade do |t|
-    t.string   "content"
-    t.integer  "question_option_id"
-    t.integer  "result_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
-  add_index "result_options", ["question_option_id"], name: "index_result_options_on_question_option_id"
-  add_index "result_options", ["result_id"], name: "index_result_options_on_result_id"
-
   create_table "results", force: :cascade do |t|
     t.integer  "status"
+    t.boolean  "is_correct"
+    t.string   "content"
     t.integer  "question_id"
     t.integer  "examination_id"
     t.datetime "created_at",     null: false
