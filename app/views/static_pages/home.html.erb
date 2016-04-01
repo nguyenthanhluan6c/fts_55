@@ -1,2 +1,14 @@
 <% provide title: t("home") %>
-<%= render "shared/examination_start" if user_signed_in? %>
+<% if user_signed_in? %>
+<%= render "shared/examination_start" %>
+<table class="activities">
+  <tr>
+    <th><%= t "activities.time" %></th>
+    <th><%= t "activities.user" %></th>
+    <th><%= t "activities.action" %></th>
+    <th><%= t "activities.target" %></th>
+    <th><%= t "activities.status" %></th>
+  </tr>
+  <%= render @feeds %>
+</table>
+<% end %>
