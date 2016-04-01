@@ -9,6 +9,8 @@ class QuestionsController < ApplicationController
 
   def create
     if @question.save
+      current_user.activities.create target_id: @question.id, 
+        action_type: "question_activities"
       flash[:success] = t "question.success_created" 
       redirect_to root_path      
     else
@@ -20,7 +22,9 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    if @question.update_attributes my_sanitizer      
+    if @question.update_attributes my_sanitizer
+      current_user.activities.first_or_create target_id: @question.id,
+        action_type: "question_activities"      
       flash[:success] = t "question.updated"
       redirect_to root_path
     else

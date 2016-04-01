@@ -5,7 +5,9 @@ class ExaminationsController < ApplicationController
   def create
     @category = Category.find my_sanitizer[:category_id]
     @examination = current_user.examinations.build category: @category, status: "testing"  
-    if @examination.save      
+    if @examination.save
+      current_user.activities.create target_id: @examination.id,
+        action_type: "examination_activities"      
       redirect_to @examination
     else
       flash[:danger] = t "examination.can_not_take_examination"
@@ -14,13 +16,15 @@ class ExaminationsController < ApplicationController
   end
 
   def show   
-    @results = @examination.results  
+    @results = @examination.results
     @time_remaining = @examination.time_remaining 
   end
   
   def update
     if @examination.update_attributes my_sanitizer
       @examination.update_attributes status: "uncheck" if ["Save", "Finish"].include? params[:commit] 
+      current_user.activities.first_or_create target_id: @examination.id,
+        action_type: "examination_activities"
       redirect_to root_path
     else
       flash[:danger] = t "examination.can_not_update"

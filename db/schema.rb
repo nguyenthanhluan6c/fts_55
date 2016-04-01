@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(version: 20160322033009) do
 
   create_table "activities", force: :cascade do |t|
-    t.integer  "type"
+    t.integer  "action_type"
     t.integer  "user_id"
     t.string   "target_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "activities", ["user_id"], name: "index_activities_on_user_id"

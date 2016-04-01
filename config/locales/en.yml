@@ -27,6 +27,12 @@ en:
       next: "Next &gt;"
       truncate: "..."
   users: "Users"
+  activities:
+    time: "Time"
+    user: "User"
+    target: "Target"
+    status: "Status"
+    action: "Action"
   categories: "Categories"
   category:
     number_of_questions_in_examination: "Examination of this category will contain %{number} questions"
