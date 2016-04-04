@@ -76,6 +76,9 @@ en:
       normal: "Normal"
       admin: "Admin"
       mod: "Mod"
+  mail:
+    examination_result: "Examination result"
+    details: "Details"
   my_app:
     name: "FTS"
   products:

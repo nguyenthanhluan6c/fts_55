@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 20160322033009) do
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.time     "time_limit"
+    t.integer  "time_limit",                         default: 0
     t.integer  "number_of_questions_in_examination"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
 
   create_table "examinations", force: :cascade do |t|

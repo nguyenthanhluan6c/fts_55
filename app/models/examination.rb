@@ -38,6 +38,10 @@ class Examination < ActiveRecord::Base
     update_attributes number_of_right_answer: results.correct.count
   end
 
+  def send_exam_result
+    ExaminationResultSenderWorker.perform_async self.id
+  end
+
   private
   def init_exam
     number = category.number_of_questions_in_examination   

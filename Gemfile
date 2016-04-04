@@ -14,6 +14,7 @@ gem "devise"
 gem "kaminari"
 gem "cancancan", "~> 1.10"
 gem "config"
+gem "sidekiq"
 
 group :development, :test do
   gem "factory_girl_rails"

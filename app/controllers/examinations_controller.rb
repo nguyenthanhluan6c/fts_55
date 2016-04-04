@@ -30,6 +30,7 @@ class ExaminationsController < ApplicationController
       elsif params[:commit] == "Save checking"
         @examination.update_attributes status: "checked"
         @examination.caculate_score
+        @examination.send_exam_result
         current_user.activities.first_or_create target_id: @examination.id,
           action_type: "examination_activities"
       end  
