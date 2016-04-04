@@ -13,7 +13,10 @@
           <%= f.collection_select :category_id, @categories, :id, :name %>
           <%= f.label :content %>
           <%= f.text_area :content, class: "form-control" %>
-
+          <% if current_user.admin? %>
+            <%= f.label :status %>
+            <%= f.select :status, Settings.question_statuses,selected: @status %>
+          <% end %>
           <%= f.label :option_type %>
           <%= custom_select f, :option_type, :question_options,
             Settings.question_option_types, @option_type %>
