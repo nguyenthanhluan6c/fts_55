@@ -27,6 +27,11 @@
           <%= text_field_tag "question#{question.id}", result.content[0],
             disabled: true %>
         <% end %>
+        <span class = "input-inline">
+          <%= check_box_tag "result#{result.id}", t("result.is_correct"),
+            result.is_correct?, {disabled: true} %>
+          <%= t "result.is_correct" %><br/>
+        </span>
       </li>
     <% end %>
   </ol>
