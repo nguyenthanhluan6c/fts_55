@@ -24,4 +24,8 @@ class Activity < ActiveRecord::Base
   def object_status
     object.status if object.present?
   end
+
+  def object_score
+    object.number_of_right_answer if object.present? && examination_activities?
+  end
 end

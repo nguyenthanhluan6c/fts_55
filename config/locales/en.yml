@@ -33,6 +33,7 @@ en:
     target: "Target"
     status: "Status"
     action: "Action"
+    score: "Score"
   categories: "Categories"
   category:
     number_of_questions_in_examination: "Examination of this category will contain %{number} questions"
@@ -61,6 +62,9 @@ en:
   examination:
     can_not_take_examination: "Can not take examination"
     can_not_update: "Cannot update examination"
+    save_check: "Save checking"
+  result:
+    is_correct: "Is correct"  
   user:
     index:
       title: "Users"
