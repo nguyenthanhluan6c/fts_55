@@ -263,3 +263,17 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 end
+
+Warden::Manager.after_set_user except: :fetch do |record, warden, options|
+  if record.respond_to?(:update_tracked_fields!) && warden.authenticated?(options[:scope])
+    if record.admin?
+      Rails.logger.info "Admin login email: #{record.email}, ip:  #{warden.request.remote_ip}, at: #{Time.now}"
+    end
+  end
+end
+
+Warden::Manager.before_logout do |record, warden, options|
+  if record.admin?
+      Rails.logger.info "Admin logout email: #{record.email}, ip:  #{warden.request.remote_ip}, at: #{Time.now}"
+  end
+end
