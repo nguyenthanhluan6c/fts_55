@@ -3,7 +3,7 @@ class CreateCategories < ActiveRecord::Migration
     create_table :categories do |t|
       t.string :name
       t.string :description
-      t.time :time_limit
+      t.integer :time_limit, default: 0
       t.integer :number_of_questions_in_examination
 
       t.timestamps null: false

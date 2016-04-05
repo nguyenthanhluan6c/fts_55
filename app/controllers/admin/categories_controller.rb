@@ -47,6 +47,6 @@ class Admin::CategoriesController < ApplicationController
   private
   def category_params
     params.require(:category).permit :name, :description, :number_of_questions_in_examination,
-      questions_attributes: [:id, :name, :_destroy]
+      :time_limit, questions_attributes: [:id, :name, :_destroy]
   end
 end
